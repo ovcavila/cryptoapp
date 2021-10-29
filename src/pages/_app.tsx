@@ -8,6 +8,7 @@ import { ThemeProvider as SCThemeProvider } from 'styled-components'
 
 import { createEmotionCache } from '../../styles/createEmotionCache';
 import { theme } from '../../styles/theme';
+import { NavBar } from '../components/Navbar';
 
 const clientEmotionCache = createEmotionCache();
 
@@ -22,6 +23,7 @@ function MyApp({ Component, emotionCache = clientEmotionCache, pageProps }: AppP
       <SCThemeProvider theme={theme}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <NavBar />
           <Component {...pageProps} />
         </ThemeProvider>
       </SCThemeProvider>

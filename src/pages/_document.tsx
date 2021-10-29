@@ -4,6 +4,9 @@ import createEmotionServer from '@emotion/server/create-instance';
 
 import { theme } from "../../styles/theme";
 import { createEmotionCache } from "../../styles/createEmotionCache";
+import { AppPropsType } from "next/dist/shared/lib/utils";
+import { NextRouter } from "next/dist/client/router";
+import { EmotionCache } from "@emotion/utils";
 
 export default class MyDocument extends Document {
   render() {
@@ -35,7 +38,8 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
+      // eslint-disable-next-line react/display-name
+      enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
     });
 
   const initialProps = await Document.getInitialProps(ctx);
