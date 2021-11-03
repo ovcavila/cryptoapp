@@ -9,6 +9,7 @@ import { ThemeProvider as SCThemeProvider } from 'styled-components'
 import { createEmotionCache } from '../../styles/createEmotionCache';
 import { theme } from '../../styles/theme';
 import { NavBar } from '../components/Navbar';
+import { CustomThemeProvider } from '../utils/CustomThemeProvider';
 
 const clientEmotionCache = createEmotionCache();
 
@@ -20,14 +21,12 @@ function MyApp({ Component, emotionCache = clientEmotionCache, pageProps }: AppP
         <title>Crypto currency App</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <SCThemeProvider theme={theme}>
-        <ThemeProvider theme={theme}>
+      <CustomThemeProvider>
           <CssBaseline />
           <NavBar />
           <Component {...pageProps} />
-        </ThemeProvider>
-      </SCThemeProvider>
-
+      </CustomThemeProvider>
+      
     </CacheProvider>
   ) 
 }

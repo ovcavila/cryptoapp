@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch --collectCoverage",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
@@ -15,7 +17,12 @@
     "@mui/icons-material": "^5.0.5",
     "@mui/material": "^5.0.6",
     "@reduxjs/toolkit": "^1.6.2",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1",
     "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
